@@ -1,0 +1,170 @@
+res:
+  register:
+    f"""<?xml version="1.0" encoding="UTF-8"?>
+    <PatrolDevice>
+    <SendCode>{s_code}</SendCode>
+    <ReceiveCode>{r_code}</ReceiveCode>
+    <Type>251</Type>
+    <Code/>
+    <Command>1</Command>
+    <Time>{datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")}</Time>
+    <Items/>
+    </PatrolDevice>
+    """
+  heart:
+    f"""<?xml version="1.0" encoding="UTF-8"?>
+    <PatrolDevice>
+    <SendCode>{s_code}</SendCode>
+    <ReceiveCode>{r_code}</ReceiveCode>
+    <Type>251</Type>
+    <Code/>
+    <Command>2</Command>
+    <Time>{datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")}</Time>
+    <Items/>
+    </PatrolDevice>
+    """
+req:
+  status:
+    f"""<?xml version="1.0" encoding="UTF-8"?>
+    <PatrolDevice>
+    <SendCode>{s_code}</SendCode>
+    <ReceiveCode>{r_code}</ReceiveCode>
+    <Type>1</Type>
+    <Code/>
+    <Command/>
+    <Time>{datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")}</Time>
+    <Items>
+      {Item}
+    </Items>
+    </PatrolDevice>
+    """
+  operate:
+    f"""<?xml version="1.0" encoding="UTF-8"?>
+    <PatrolDevice>
+    <SendCode>{s_code}</SendCode>
+    <ReceiveCode>{r_code}</ReceiveCode>
+    <Type>2</Type>
+    <Code/>
+    <Command/>
+    <Time>{datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")}</Time>
+    <Items>
+      {Item}
+    </Items>
+    </PatrolDevice>
+    """
+  nest_status:
+    f"""<?xml version="1.0" encoding="UTF-8"?>
+    <PatrolDevice>
+    <SendCode>{s_code}</SendCode>
+    <ReceiveCode>{r_code}</ReceiveCode>
+    <Type>20001</Type>
+    <Code/>
+    <Command/>
+    <Time>{datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")}</Time>
+    <Items>
+      {Item}
+    </Items>
+    </PatrolDevice>
+    """
+  nest_operate:
+    f"""<?xml version="1.0" encoding="UTF-8"?>
+    <PatrolDevice>
+    <SendCode>{s_code}</SendCode>
+    <ReceiveCode>{r_code}</ReceiveCode>
+    <Type>10004</Type>
+    <Code/>
+    <Command/>
+    <Time>{datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")}</Time>
+    <Items>
+      {Item}
+    </Items>
+    </PatrolDevice>
+    """
+  coordinate:
+    f"""<?xml version="1.0" encoding="UTF-8"?>
+    <PatrolDevice>
+    <SendCode>{s_code}</SendCode>
+    <ReceiveCode>{r_code}</ReceiveCode>
+    <Type>3</Type>
+    <Code>{device_code}</Code>
+    <Command/>
+    <Time>{datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")}</Time>
+    <Items>
+    <Item {Item}>
+    </Items>
+    </PatrolDevice>
+    """
+  route:
+    f"""<?xml version="1.0" encoding="UTF-8"?>
+    <PatrolDevice>
+    <SendCode>{s_code}</SendCode>
+    <ReceiveCode>{r_code}</ReceiveCode>
+    <Type>4</Type>
+    <Code>{device_code}</Code>
+    <Command/>
+    <Time>{datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")}</Time>
+    <Items>
+    <Item {Item}>
+    </Items>
+    </PatrolDevice>
+    """
+  exception:
+    f"""<?xml version="1.0" encoding="UTF-8"?>
+    <PatrolDevice>
+    <SendCode>{s_code}</SendCode>
+    <ReceiveCode>{r_code}</ReceiveCode>
+    <Type>5</Type>
+    <Code/>
+    <Command/>
+    <Time>{datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")}</Time>
+    <Items>
+    <Item {Item}>
+    </Items>
+    </PatrolDevice>
+    """
+  env:
+    f"""<?xml version="1.0" encoding="UTF-8"?>
+    <PatrolDevice>
+    <SendCode>{s_code}</SendCode>
+    <ReceiveCode>{r_code}</ReceiveCode>
+    <Type>21</Type>
+    <Code/>
+    <Command/>
+    <Time>{datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")}</Time>
+    <Items>
+      {Item}
+    </Items>
+    </PatrolDevice>
+    """
+  task:
+    f"""<?xml version="1.0" encoding="UTF-8"?>
+    <PatrolDevice>
+    <SendCode>{s_code}</SendCode>
+    <ReceiveCode>{r_code}</ReceiveCode>
+    <Type>41</Type>
+    <Code/>
+    <Command/>
+    <Time>{datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")}</Time>
+    <Items>
+    <Item {Item}>
+    </Items>
+    </PatrolDevice>
+    """
+  result:
+    f"""<?xml version="1.0" encoding="UTF-8"?>
+    <PatrolDevice>
+    <SendCode>{s_code}</SendCode>
+    <ReceiveCode>{r_code}</ReceiveCode>
+    <Type>61</Type>
+    <Code/>
+    <Command/>
+    <Time>{datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")}</Time>
+    <Items>
+      {Item}
+    </Items>
+    </PatrolDevice>
+    """
+
+
+
+

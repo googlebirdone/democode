@@ -1,0 +1,136 @@
+res:
+  register:
+    f'<?xml version="1.0" encoding="UTF-8"?>\n<PatrolHost>\n\t<SendCode>{s_code}</SendCode>\n\t<ReceiveCode>{r_code}</ReceiveCode>
+    <Type>251</Type>
+    <Code>200</Code>
+    <Command>4</Command>
+    <Time>{datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")}</Time>
+    <Items>
+    <Item heart_beat_interval="61" patroldevice_run_interval="62" weather_interval="63" nest_run_interval="64" />
+    </Items>
+    </PatrolHost>
+    '
+  common_success:
+    f"""<?xml version="1.0" encoding="UTF-8"?>
+    <PatrolHost>
+    <SendCode>{s_code}</SendCode>
+    <ReceiveCode>{r_code}</ReceiveCode>
+    <Type>251</Type>
+    <Code>200</Code>
+    <Command>3</Command>
+    <Time>{datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")}</Time>
+    <Items/>
+    </PatrolHost>
+    """
+  common_err:
+    f"""<?xml version="1.0" encoding="UTF-8"?>
+    <PatrolHost>
+    <SendCode>{s_code}</SendCode>
+    <ReceiveCode>{r_code}</ReceiveCode>
+    <Type>251</Type>
+    <Code>400</Code>
+    <Command>3</Command>
+    <Time>{datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")}</Time>
+    <Items/>
+    </PatrolHost>
+    """
+req:
+  patrol_control:
+    f"""<?xml version="1.0" encoding="UTF-8"?>
+    <PatrolHost>
+    <SendCode>{s_code}</SendCode>
+    <ReceiveCode>{r_code}</ReceiveCode>
+    <Type>{Type}</Type>
+    <Code>{patrol_code}</Code>
+    <Command>{Command}</Command>
+    <Time>{datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")}</Time>
+    <Items>
+    <Item {Item} />
+    </Items>
+    </PatrolHost>
+    """
+  task_control:
+    f"""<?xml version="1.0" encoding="UTF-8"?>
+    <PatrolHost>
+    <SendCode>{s_code}</SendCode>
+    <ReceiveCode>{r_code}</ReceiveCode>
+    <Type>41</Type>
+    <Code>{task_code}</Code>
+    <Command>{Command}</Command>
+    <Time>{datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")}</Time>
+    <Items/>
+    </PatrolHost>
+    """
+  task_create:
+    f"""<?xml version="1.0" encoding="UTF-8"?>
+    <PatrolHost>
+    <SendCode>{s_code}</SendCode>
+    <ReceiveCode>{r_code}</ReceiveCode>
+    <Type>101</Type>
+    <Code>{Code}</Code>
+    <Command>1</Command>
+    <Time>{datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")}</Time>
+    <Items>
+    <Item {Item}/>
+    </Items>
+    </PatrolHost>
+    """
+  task_union:
+    f"""<?xml version="1.0" encoding="UTF-8"?>
+    <PatrolHost>
+    <SendCode>{s_code}</SendCode>
+    <ReceiveCode>{r_code}</ReceiveCode>
+    <Type>102</Type>
+    <Code>{station_code}</Code>
+    <Command>1</Command>
+    <Time>{datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")}</Time>
+    <Items>
+    <Item {Item}/>
+    </Items>
+    </PatrolHost>
+    """
+  overhaul_area:
+    f"""<?xml version="1.0" encoding="UTF-8"?>
+    <PatrolHost>
+    <SendCode>{s_code}</SendCode>
+    <ReceiveCode>{r_code}</ReceiveCode>
+    <Type>81</Type>
+    <Code>{station_code}</Code>
+    <Command>4</Command>
+    <Time>{datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")}</Time>
+    <Items>
+    <Item config_code="101" enable="1" start_time="{(datetime.datetime.now() + datetime.timedelta(days=2)).strftime("%Y-%m-%d %H:%M:%S")}" end_time="{(datetime.datetime.now() + datetime.timedelta(days=3)).strftime("%Y-%m-%d %H:%M:%S")}" device_level="3" device_list="168257565121172kSifY" coordinate_pixel="0,0,0;30,0,0;30,40,0;0,40,0;"/>
+    </Items>
+    </PatrolHost>
+    """
+  model:
+    f"""<?xml version="1.0" encoding="UTF-8"?>
+    <PatrolHost>
+    <SendCode>{s_code}</SendCode>
+    <ReceiveCode>{r_code}</ReceiveCode>
+    <Type>61</Type>
+    <Code>{station_code}</Code>
+    <Command>{Command}</Command>
+    <Time>{datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")}</Time>
+    <Items/>
+    </PatrolHost>
+    """
+  reliability:
+    f"""<?xml version="1.0" encoding="UTF-8"?>
+    <PatrolHost>
+    <SendCode>{s_code}</SendCode>
+    <ReceiveCode>{r_code}</ReceiveCode>
+    <Type>121</Type>
+    <Code>{station_code}</Code>
+    <Command>{Command}</Command>
+    <Time>{datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")}</Time>
+    <Items>
+    <Item {Item}/>
+    </Items>
+    </PatrolHost>
+    """
+
+
+
+
+
