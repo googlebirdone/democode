@@ -1,4 +1,4 @@
-res:
+req:
   register:
     f"""<?xml version="1.0" encoding="UTF-8"?>
     <PatrolDevice>
@@ -23,7 +23,6 @@ res:
     <Items/>
     </PatrolDevice>
     """
-req:
   status:
     f"""<?xml version="1.0" encoding="UTF-8"?>
     <PatrolDevice>
